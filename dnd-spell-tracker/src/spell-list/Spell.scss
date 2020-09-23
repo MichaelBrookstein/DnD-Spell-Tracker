@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.spell {
+  direction: ltr;
+  font-family: 'Roboto', sans-serif;
+  border-bottom: solid;
+  height: 35px;
+  overflow-y: hidden;
+  .spell-header {
+
+  }
+  .spell-subhead {
+    display: table;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 15px;
+  }
+  h1 {
+    font-size: 24px;
+    display: inline;
+    line-height: 35px;
+  }
+  .spell-name {
+    cursor: pointer;
+    left: 3%;
+    position: sticky;
+  }
+  .spell-level {
+    left: 45%;
+    position: sticky;
+  }
+  .spell-school {
+    left: 60%;
+    position: sticky;
+  }
+  .spell-desc {
+    padding: 0px 25px;
+    display: inline-block;
+    margin-top: 0;
+    white-space: pre-wrap;
+  }
+  .spell-higher-level {
+    padding: 0px 25px;
+    display: inline-block;
+    margin-top: 0;
+  }
+  .spell-info {
+    display: table-cell;
+    padding: 0 15px;
+  }
+  .spell-classes {
+    margin-top: 0;
+    text-align: center;
+  }
+  .cast-div {
+    text-align: center;
+    .cast-btn {
+      * {
+        margin-left: 5px;
+      }
+    }
+    .dmg-table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      caption {
+        font-weight: bold;
+        min-width: 250px;
+        padding-bottom: 5px;
+      }
+      .val-cell {
+        border: solid black 1px;
+        padding: 5px 10px;
+      }
+      .active-slot {
+        color: #FFFF88;
+        text-shadow: 0 0 6px black, 0 0 8px yellow;
+      }
+    }
+  }
+}
+
+.spell-open {
+  height: auto;
+}
+.head-open {
+  border-bottom: solid 1px;
+}
