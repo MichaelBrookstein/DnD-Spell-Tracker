@@ -56,8 +56,6 @@ class App extends Component {
     this.setState({ knownIDArray: cantripID })
   }
 
-  //Test
-
   render() {
     return (
       <div>
