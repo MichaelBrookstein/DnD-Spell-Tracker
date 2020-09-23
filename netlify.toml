@@ -1,4 +1,4 @@
 [build]
-  base = "DnD-Spell-Tracker"
+  base = "DnD-Spell-Tracker/"
   command = "CI= npm run build"
-  build = "build"
+  publish = "build"
