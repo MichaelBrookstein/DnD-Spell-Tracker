@@ -4,7 +4,7 @@ import "./SpellBook.scss";
 function BookFormComponent(props) {
   return (
     <main>
-      <form className="char-level">
+      <form className="char-level" onSubmit={e => { e.preventDefault(); }}>
       <label> Character Level:
         <input
           name="charLevel"

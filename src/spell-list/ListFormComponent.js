@@ -3,7 +3,7 @@ import React from "react"
 function ListFormComponent(props) {
   return (
     <main>
-      <form>
+      <form onSubmit={e => { e.preventDefault(); }}>
         <label className="spell-level"> Spell Level:
           <select value={props.data.spellLevel} onChange={props.handleChange} name="spellLevel">
             <option defaultValue value="Any Level">Any Level</option>
@@ -19,7 +19,7 @@ function ListFormComponent(props) {
             <option value="9">9</option>
           </select>
         </label>
-        <label className="school"> School: 
+        <label className="school"> School:
           <select value={props.data.value} onChange={props.handleChange} name="spellSchool">
             <option defaultValue value="Any School">Any School</option>
             <option value="Abjuration">Abjuration</option>

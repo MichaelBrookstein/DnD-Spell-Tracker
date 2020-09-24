@@ -39,7 +39,13 @@ class SpellBookContainer extends Component {
 
   handleCharLevel(event) {
     const {name, value} = event.target;
-    this.setState({[name]: value})
+    console.log(value)
+    if (value == "") {
+      this.setState({[name]: 1})
+    }
+    else {
+      this.setState({[name]: value})
+    }
   }
 
 

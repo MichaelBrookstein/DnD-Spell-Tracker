@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap');
 
 $side-small: 4.4%;
-$side-big: 175px;
+$side-big: 180px;
 $all-class-bg: #C73032;
 $barbarian-bg: #E7623E;
 $bard-bg: #AB6DAC;
@@ -44,8 +44,8 @@ $wizard-bg: #2A50A1;
   }
   .classLabel {
     align-self: center;
-    padding-left: 1vw;
-    font-size: 20px;
+    padding-left: 1.1vw;
+    font-size: 19px;
     pointer-events: none;
     position: relative;
   }
