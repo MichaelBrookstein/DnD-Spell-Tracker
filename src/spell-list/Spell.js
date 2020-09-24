@@ -117,8 +117,8 @@ function Spell(props) {
 
   return (
     <div className={"spell " + tabSize}>
-      <div className={"spell-header " + expandedHeader}>
-        <h1 className="spell-name" onClick={() => handleClick()}> {props.name}  </h1>
+      <div className={"spell-header " + expandedHeader} onClick={() => handleClick()}>
+        <h1 className="spell-name" > {props.name}  </h1>
         <h1 className="spell-level"> {props.level} </h1>
         <h1 className="spell-school"> {props.school} </h1>
         <h1 className="learn-spell-btn" id={props.spell_id} onClick={props.handleSpell}> {known ? "-" : "+"} </h1>

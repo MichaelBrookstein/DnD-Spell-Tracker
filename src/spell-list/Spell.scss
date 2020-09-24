@@ -8,7 +8,7 @@
   height: 35px;
   overflow-y: hidden;
   .spell-header {
-
+    cursor: pointer;
   }
   .spell-subhead {
     display: table;
@@ -22,7 +22,6 @@
     line-height: 35px;
   }
   .spell-name {
-    cursor: pointer;
     left: 3%;
     position: sticky;
   }
