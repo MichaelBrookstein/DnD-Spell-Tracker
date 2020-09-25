@@ -43,6 +43,9 @@ class SpellBookContainer extends Component {
     if (value == "") {
       this.setState({[name]: 1})
     }
+    else if (value > 20) {
+      this.setState({[name]: 20})
+    }
     else {
       this.setState({[name]: value})
     }
