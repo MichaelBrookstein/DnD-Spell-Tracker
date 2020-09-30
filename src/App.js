@@ -59,10 +59,15 @@ class App extends Component {
   render() {
     return (
       <div>
-        <SideNavBar selectedClass={this.state.class} handleClass={this.handleClass}/>
-        <SpellListContainer selectedClass={this.state.class} handleLearnSpell={this.handleLearnSpell} knownIDArray={this.state.knownIDArray} handleSpellBook={this.handleSpellBook}/>
-        <SpellBookContainer selectedClass={this.state.class} handleUnlearnSpell={this.handleUnlearnSpell} unprepareSpells={this.unprepareSpells} knownSpells={this.state.spellBookArray} />
-        <FooterComponent />
+        <div className="content">
+          <SideNavBar selectedClass={this.state.class} handleClass={this.handleClass}/>
+          <SpellListContainer selectedClass={this.state.class} handleLearnSpell={this.handleLearnSpell} knownIDArray={this.state.knownIDArray} handleSpellBook={this.handleSpellBook}/>
+          <SpellBookContainer selectedClass={this.state.class} handleUnlearnSpell={this.handleUnlearnSpell} unprepareSpells={this.unprepareSpells} knownSpells={this.state.spellBookArray} />
+          <FooterComponent />
+        </div>
+        <div className="mobile-placeholder">
+          <h1> Smaller Resolutions Still Under Development </h1>
+        </div>
       </div>
     )
   }

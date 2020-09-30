@@ -16,104 +16,118 @@ $sorcerer-bg: #992E2E;
 $warlock-bg: #7B469B;
 $wizard-bg: #2A50A1;
 
-.sidenav {
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: $side-small;
-  background: gray;
-  overflow: hidden;
-  transition: 0.5s;
-  z-index: 999;
-}
-.side-expand {
-  width: $side-big;
+@media only screen and (max-width: 768px) {
+
 }
 
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
 
-.tabContainer {
-  display: flex;
-  padding: 0px 18px;
-  height: 7.7%;
-  font-family: 'Grenze Gotisch', cursive;
-  .icon {
-    min-width: 5vh;
-    min-height: 5vh;
-    pointer-events: none;
+}
+
+@media only screen and (max-width: 1920px) and (min-width: 1024px) {
+  .sidenav {
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: $side-small;
+    background: gray;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 999;
   }
-  .classLabel {
-    align-self: center;
-    padding-left: 1.1vw;
-    font-size: 19px;
-    pointer-events: none;
-    position: relative;
+  .side-expand {
+    width: $side-big;
+  }
+
+
+  .tabContainer {
+    display: flex;
+    padding: 0px 18px;
+    height: 7.7%;
+    font-family: 'Grenze Gotisch', cursive;
+    .icon {
+      min-width: 5vh;
+      min-height: 5vh;
+      pointer-events: none;
+    }
+    .classLabel {
+      align-self: center;
+      padding-left: 1.1vw;
+      font-size: 19px;
+      pointer-events: none;
+      position: relative;
+    }
+  }
+
+  .active {
+    border-left: 7px inset;
+  }
+
+  .all-classes {
+    background: $all-class-bg;
+    border-color: $all-class-bg;
+  }
+  .barbarian {
+    background: $barbarian-bg;
+    border-color: $barbarian-bg;
+  }
+  .bard {
+    background: $bard-bg;
+    border-color: $bard-bg;
+  }
+  .cleric {
+    background: $cleric-bg;
+    border-color: $cleric-bg;
+  }
+  .druid {
+    background: $druid-bg;
+    border-color: $druid-bg;
+  }
+  .fighter {
+    background: $fighter-bg;
+    border-color: $fighter-bg;
+  }
+  .monk {
+    background: $monk-bg;
+    border-color: $monk-bg;
+  }
+  .paladin {
+    background: $paladin-bg;
+    border-color: $paladin-bg;
+  }
+  .ranger {
+    background: $ranger-bg;
+    border-color: $ranger-bg;
+  }
+  .rogue {
+    background: $rogue-bg;
+    border-color: $rogue-bg;
+  }
+  .sorcerer {
+    background: $sorcerer-bg;
+    border-color: $sorcerer-bg;
+  }
+  .warlock {
+    background: $warlock-bg;
+    border-color: $warlock-bg;
+  }
+  .wizard {
+    background: $wizard-bg;
+    border-color: $wizard-bg;
+  }
+
+
+  .noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }
 
-.active {
-  border-left: 7px inset;
-}
+@media (min-width: 1920px) {
 
-.all-classes {
-  background: $all-class-bg;
-  border-color: $all-class-bg;
-}
-.barbarian {
-  background: $barbarian-bg;
-  border-color: $barbarian-bg;
-}
-.bard {
-  background: $bard-bg;
-  border-color: $bard-bg;
-}
-.cleric {
-  background: $cleric-bg;
-  border-color: $cleric-bg;
-}
-.druid {
-  background: $druid-bg;
-  border-color: $druid-bg;
-}
-.fighter {
-  background: $fighter-bg;
-  border-color: $fighter-bg;
-}
-.monk {
-  background: $monk-bg;
-  border-color: $monk-bg;
-}
-.paladin {
-  background: $paladin-bg;
-  border-color: $paladin-bg;
-}
-.ranger {
-  background: $ranger-bg;
-  border-color: $ranger-bg;
-}
-.rogue {
-  background: $rogue-bg;
-  border-color: $rogue-bg;
-}
-.sorcerer {
-  background: $sorcerer-bg;
-  border-color: $sorcerer-bg;
-}
-.warlock {
-  background: $warlock-bg;
-  border-color: $warlock-bg;
-}
-.wizard {
-  background: $wizard-bg;
-  border-color: $wizard-bg;
-}
-
-
-.noselect {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
