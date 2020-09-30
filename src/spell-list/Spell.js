@@ -121,7 +121,7 @@ function Spell(props) {
         <h1 className="spell-name" > {props.name}  </h1>
         <h1 className="spell-level"> {props.level} </h1>
         <h1 className="spell-school"> {props.school} </h1>
-        <h1 className="learn-spell-btn" id={props.spell_id} onClick={props.handleSpell}> {known ? "-" : "+"} </h1>
+        <h1 className="learn-spell-btn noselect" id={props.spell_id} onClick={props.handleSpell}> {known ? "-" : "+"} </h1>
       </div>
       <div className="spell-subhead">
         <p className="spell-info"> <b>Components:</b> {props.components.toString()} </p>

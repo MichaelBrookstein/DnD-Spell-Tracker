@@ -18,6 +18,45 @@
     height: 100%;
   }
 
+  .book-list-container {
+    height: 70%;
+    width: 100%;
+    overflow-y: auto;
+    -webkit-box-shadow: inset 18px 0px 15px -5px;
+    -moz-box-shadow: inset 18px 0px 15px -5px;
+    box-shadow: inset 18px 0px 15px -5px;
+  }
+
+  .sort-bar {
+    font-family: 'Roboto', sans-serif;
+    direction: ltr;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+    background: url("../img/parchment.jpg");
+    width: 100%;
+    -webkit-box-shadow: inset 18px 0px 15px -8px, 0px 4px 7px;
+    -moz-box-shadow: inset 18px 0px 15px -8px, 0px 4px 7px;
+    box-shadow: inset 18px 0px 15px -8px, 0px 4px 7px;
+    z-index: 5;
+    h1 {
+      display: inline;
+      cursor: pointer;
+      position: relative;
+    }
+    .sort-name {
+      left: 3%;
+    }
+    .sort-level {
+      left: 30%;
+    }
+    .sort-school {
+      left: 40%;
+    }
+  }
+
   .book-form {
     height: 25%;
     font-family: 'Grenze Gotisch', cursive;
@@ -100,16 +139,6 @@
         font-size: 18px;
       }
     }
-  }
-
-
-  .spell-book-list {
-    height: 70%;
-    width: 100%;
-    overflow-y: auto;
-    -webkit-box-shadow: inset 18px 0px 15px -5px;
-    -moz-box-shadow: inset 18px 0px 15px -5px;
-    box-shadow: inset 18px 0px 15px -5px;
   }
 
   .spell-book-list::after {
