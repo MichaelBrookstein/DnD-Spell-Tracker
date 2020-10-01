@@ -9,7 +9,8 @@
 
 }
 
-@media only screen and (max-width: 1920px) and (min-width: 1024px) {
+// @media only screen and (max-width: 1920px) and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .spell {
     direction: ltr;
     font-family: 'Roboto', sans-serif;
@@ -96,6 +97,6 @@
   }
 }
 
-@media (min-width: 1920px) {
-
-}
+// @media (min-width: 1920px) {
+//
+// }

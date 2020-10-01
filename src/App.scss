@@ -51,7 +51,8 @@ body {
   }
 }
 
-@media only screen and (max-width: 1920px) and (min-width: 1024px) {
+// @media only screen and (max-width: 1920px) and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .footer {
     position: absolute;
     bottom: 0px;
@@ -73,8 +74,8 @@ body {
   }
 }
 
-@media (min-width: 1920px) {
-  .mobile-placeholder {
-    display: none;
-  }
-}
+// @media (min-width: 1920px) {
+//   .mobile-placeholder {
+//     display: none;
+//   }
+// }
