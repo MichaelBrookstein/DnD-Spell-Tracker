@@ -11,19 +11,29 @@ class App extends Component {
     super()
     this.state = {
       class: "All Classes",
+      showNav: "",
       knownIDArray: [],
       spellBookArray: []
     }
-    this.handleClass = this.handleClass.bind(this)
+    this.handleNavClick = this.handleNavClick.bind(this)
     this.handleLearnSpell = this.handleLearnSpell.bind(this)
     this.handleUnlearnSpell = this.handleUnlearnSpell.bind(this)
     this.handleSpellBook = this.handleSpellBook.bind(this)
     this.unprepareSpells = this.unprepareSpells.bind(this)
   }
 
-  handleClass(event) {
+  handleNavClick(event) {
     const currClass = event.target.id
-    this.setState({class: currClass})
+    if (currClass !== "Ribbon") {
+      if (currClass !== "") {
+        this.setState({class: currClass})
+        this.setState({showNav: ""})
+      }
+    }
+    else {
+      this.setState({showNav: "showNav"})
+    }
+    event.stopPropagation();
   }
 
   handleLearnSpell(event) {
@@ -60,7 +70,7 @@ class App extends Component {
     return (
       <div>
         <div className="content">
-          <SideNavBar selectedClass={this.state.class} handleClass={this.handleClass}/>
+          <SideNavBar selectedClass={this.state.class} showNav={this.state.showNav} handleNavClick={this.handleNavClick}/>
           <SpellListContainer selectedClass={this.state.class} handleLearnSpell={this.handleLearnSpell} knownIDArray={this.state.knownIDArray} handleSpellBook={this.handleSpellBook}/>
           <SpellBookContainer selectedClass={this.state.class} handleUnlearnSpell={this.handleUnlearnSpell} unprepareSpells={this.unprepareSpells} knownSpells={this.state.spellBookArray} />
           <FooterComponent />

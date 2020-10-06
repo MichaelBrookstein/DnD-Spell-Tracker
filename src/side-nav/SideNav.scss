@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap');
 
-$side-small: 4.4%;
+$side-small: 87px;
 $side-big: 180px;
 $all-class-bg: #C73032;
 $barbarian-bg: #E7623E;
@@ -27,95 +27,109 @@ $wizard-bg: #2A50A1;
 // @media only screen and (max-width: 1920px) and (min-width: 1024px) {
 @media only screen and (min-width: 1024px) {
   .sidenav {
-    height: 100%;
-    top: 0;
+    height: auto;
+    top: -101%;
     left: 0;
     position: absolute;
     width: $side-small;
-    background: gray;
     overflow: hidden;
-    transition: 0.5s;
-    z-index: 999;
-  }
-  .side-expand {
-    width: $side-big;
-  }
+    z-index: 10;
+    transition: top 0.85s ease-in-out, width 0.35s ease-in-out;
 
+  }
 
   .tabContainer {
+    cursor: pointer;
     display: flex;
     padding: 0px 18px;
-    height: 7.7%;
+    height: 7.7vh;
     font-family: 'Grenze Gotisch', cursive;
+    border-left: 1px solid;
+    border-right: 1px solid;
     .icon {
-      min-width: 5vh;
-      min-height: 5vh;
+      min-width: 50px;
+      min-height: 50px;
       pointer-events: none;
     }
     .classLabel {
       align-self: center;
-      padding-left: 1.1vw;
+      padding-left: 20px;
       font-size: 19px;
       pointer-events: none;
       position: relative;
     }
   }
 
-  .active {
-    border-left: 7px inset;
+  .showNav {
+    top: 0;
+  }
+
+  .showNav:hover {
+    width: $side-big;
   }
 
   .all-classes {
     background: $all-class-bg;
-    border-color: $all-class-bg;
   }
   .barbarian {
     background: $barbarian-bg;
-    border-color: $barbarian-bg;
   }
   .bard {
     background: $bard-bg;
-    border-color: $bard-bg;
   }
   .cleric {
     background: $cleric-bg;
-    border-color: $cleric-bg;
   }
   .druid {
     background: $druid-bg;
-    border-color: $druid-bg;
   }
   .fighter {
     background: $fighter-bg;
-    border-color: $fighter-bg;
   }
   .monk {
     background: $monk-bg;
-    border-color: $monk-bg;
   }
   .paladin {
     background: $paladin-bg;
-    border-color: $paladin-bg;
   }
   .ranger {
     background: $ranger-bg;
-    border-color: $ranger-bg;
   }
   .rogue {
     background: $rogue-bg;
-    border-color: $rogue-bg;
   }
   .sorcerer {
     background: $sorcerer-bg;
-    border-color: $sorcerer-bg;
   }
   .warlock {
     background: $warlock-bg;
-    border-color: $warlock-bg;
   }
   .wizard {
     background: $wizard-bg;
-    border-color: $wizard-bg;
+  }
+  .ribbon {
+    background: url("../img/ribbon_bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: $side-small;
+    height: 115px;
+    border: none;
+    cursor: default;
+    .icon {
+      padding-bottom: 25px;
+    }
+  }
+
+
+  .image-map {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    width: 85px;
+    height: 115px;
+    z-index: 11;
+
   }
 
 

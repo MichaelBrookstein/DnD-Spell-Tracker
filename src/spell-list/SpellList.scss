@@ -1,8 +1,6 @@
-@import "../side-nav/SideNav";
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-$list-width: 48.6%;
 
 
 @media only screen and (max-width: 768px) {
@@ -17,9 +15,8 @@ $list-width: 48.6%;
 @media only screen and (min-width: 1024px) {
   .spell-list-container {
     position: fixed;
-    left: $side-small;
     height: 100%;
-    width: $list-width;
+    width: 50%;
   }
 
   .list-form {

@@ -11,6 +11,7 @@ import { ReactComponent as RogueIcon } from './RogueIcon.svg';
 import { ReactComponent as SorcererIcon } from './SorcererIcon.svg';
 import { ReactComponent as WarlockIcon } from './WarlockIcon.svg';
 import { ReactComponent as WizardIcon } from './WizardIcon.svg';
+import { ReactComponent as RibbonIcon } from './AllClassIcon.svg';
 
 
 export default {
