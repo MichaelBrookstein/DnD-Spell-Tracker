@@ -118,10 +118,10 @@ function Spell(props) {
   return (
     <div className={"spell " + tabSize}>
       <div className={"spell-header " + expandedHeader} onClick={() => handleClick()}>
-        <h1 className="spell-name" > {props.name}  </h1>
-        <h1 className="spell-level"> {props.level} </h1>
-        <h1 className="spell-school"> {props.school} </h1>
-        <h1 className="learn-spell-btn noselect" id={props.spell_id} onClick={props.handleSpell}> {known ? "-" : "+"} </h1>
+        <h1 className="spell-head-info spell-name" > {props.name}  </h1>
+        <h1 className="spell-head-info spell-level"> {props.level} </h1>
+        <h1 className="spell-head-info spell-school"> {props.school} </h1>
+        <h1 className="spell-head-info learn-button noselect" id={props.spell_id} onClick={props.handleSpell}> {known ? "-" : "+"} </h1>
       </div>
       <div className="spell-subhead">
         <p className="spell-info"> <b>Components:</b> {props.components.toString()} </p>

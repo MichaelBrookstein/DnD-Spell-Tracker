@@ -16,16 +16,7 @@ $sorcerer-bg: #992E2E;
 $warlock-bg: #7B469B;
 $wizard-bg: #2A50A1;
 
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
-
-}
-
-// @media only screen and (max-width: 1920px) and (min-width: 1024px) {
-@media only screen and (min-width: 1024px) {
+@mixin base-styles($ribbon-opacity: 100%) {
   .sidenav {
     height: auto;
     top: -101%;
@@ -112,6 +103,7 @@ $wizard-bg: #2A50A1;
     height: 115px;
     outline: none;
     cursor: default;
+    opacity: $ribbon-opacity;
     .icon {
       padding-bottom: 25px;
     }
@@ -192,9 +184,7 @@ $wizard-bg: #2A50A1;
     width: 85px;
     height: 115px;
     z-index: 11;
-
   }
-
 
   .noselect {
     -webkit-touch-callout: none;
@@ -204,6 +194,19 @@ $wizard-bg: #2A50A1;
     -ms-user-select: none;
     user-select: none;
   }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  @include base-styles(50%);
+}
+
+// @media only screen and (max-width: 1920px) and (min-width: 1024px) {
+@media (min-width: 1024px) {
+ @include base-styles;
 }
 
 // @media (min-width: 1920px) {

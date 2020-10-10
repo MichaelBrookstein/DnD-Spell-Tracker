@@ -1,17 +1,7 @@
 @import "../spell-list/SpellList";
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap');
 
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 1024px) and (min-width: 768px) {
-
-}
-
-// @media only screen and (max-width: 1920px) and (min-width: 1024px) {
-@media only screen and (min-width: 1024px) {
+@mixin base-styles($slot-width: 20%, $form-height: 25%, $slot-height: 10px, $slot-container-top: 12%) {
   .spell-book-container {
     position: fixed;
     right: 0;
@@ -29,12 +19,11 @@
   }
 
   .sort-bar {
+    display: table;
     font-family: 'Roboto', sans-serif;
     direction: ltr;
-    height: 50px;
-    line-height: 50px;
-    font-size: 14px;
     position: sticky;
+    font-size: 14px;
     top: 0;
     background: url("../img/parchment.jpg");
     width: 100%;
@@ -43,23 +32,27 @@
     box-shadow: inset 18px 0px 15px -8px, 0px 4px 7px;
     z-index: 5;
     h1 {
-      display: inline;
       cursor: pointer;
-      position: relative;
     }
-    .sort-name {
-      left: 3%;
-    }
-    .sort-level {
-      left: 30%;
-    }
-    .sort-school {
-      left: 40%;
-    }
+  }
+  .sort-text {
+    white-space: nowrap;
+    display: table-cell;
+  }
+  .sort-name {
+    width: 40%;
+    padding-left: 25px;
+  }
+  .sort-level {
+    width: 30%;
+  }
+  .sort-school {
+    width: 30%;
+    padding-right: 15px;
   }
 
   .book-form {
-    height: 25%;
+    height: $form-height;
     font-family: 'Grenze Gotisch', cursive;
     position: relative;
     background: url("../img/parchment.jpg");
@@ -79,19 +72,18 @@
       margin-top: -3%;
       top: 1%;
     }
-    .slot-row {
+    .slot-container {
       position: absolute;
-      display: table;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
       width: 100%;
-    }
-    .row1 {
-      top: 25%;
-    }
-    .row2 {
-      top: 45%;
+      top: $slot-container-top;
     }
     .spell-slots {
-      display: table-cell;
+      height: $slot-height;
+      width: $slot-width;
+      white-space: nowrap;
     }
     .slot-num {
       font-size: 30px;
@@ -108,37 +100,8 @@
       color: darkred;
       text-shadow: 0 0 4px red;
     }
-    .rest-btn {
-      font-family: 'Grenze Gotisch', cursive;
-      position: absolute;
-      float: right;
-      bottom: 14%;
-      right: 22%;
-      height: 36px;
-      width: 150px;
-      font-size: 20px;
-      line-height: 18px;
-    }
-    .keep-spells {
-      position: absolute;
-      right: 21%;
-      bottom: 2%;
-      font-size: 18px;
-      display: none;
-    }
     .show-prepare {
       display: block;
-    }
-    .char-level {
-      position: absolute;
-      float: right;
-      bottom: 15%;
-      left: 18%;
-      input {
-        margin-left: 10px;
-        width: 36px;
-        font-size: 18px;
-      }
     }
   }
 
@@ -153,6 +116,77 @@
     left: 0;
     z-index: -5;
   }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  @include base-styles(33%, 35%);
+  .rest-btn {
+    font-family: 'Grenze Gotisch', cursive;
+    position: absolute;
+    float: right;
+    bottom: 14%;
+    right: 5%;
+    height: 36px;
+    width: 150px;
+    font-size: 20px;
+    line-height: 18px;
+  }
+  .keep-spells {
+    position: absolute;
+    right: 5%;
+    bottom: 2%;
+    font-size: 18px;
+    display: none;
+  }
+  .char-level {
+    position: absolute;
+    float: right;
+    bottom: 15%;
+    left: 5%;
+    input {
+      margin-left: 10px;
+      width: 36px;
+      font-size: 18px;
+    }
+  }
+}
+
+// @media only screen and (max-width: 1920px) and (min-width: 1024px) {
+@media (min-width: 1024px) {
+ @include base-styles;
+ .rest-btn {
+   font-family: 'Grenze Gotisch', cursive;
+   position: absolute;
+   float: right;
+   bottom: 14%;
+   right: 18%;
+   height: 36px;
+   width: 150px;
+   font-size: 20px;
+   line-height: 18px;
+ }
+ .keep-spells {
+   position: absolute;
+   right: 18%;
+   bottom: 2%;
+   font-size: 18px;
+   display: none;
+ }
+ .char-level {
+   position: absolute;
+   float: right;
+   bottom: 15%;
+   left: 14%;
+   input {
+     margin-left: 10px;
+     width: 36px;
+     font-size: 18px;
+   }
+ }
 }
 
 // @media (min-width: 1920px) {

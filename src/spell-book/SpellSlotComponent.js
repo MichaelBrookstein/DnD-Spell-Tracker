@@ -1070,14 +1070,12 @@ class SpellSlotComponent extends Component {
         <div className="class-book">
           <h1> {this.props.selectedClass == "All Classes" ? "" : this.props.selectedClass} Spellbook </h1>
         </div>
-        <div className="slot-row row1">
+        <div className="slot-container">
           <p className="spell-slots"> 1st slots: <span className={"slot-num " + (this.state.firstSlots == 0 ? "empty-slot " : "") + this.state.slotFlash1}> {this.state.firstSlots} </span> </p>
           <p className="spell-slots"> 2nd slots: <span className={"slot-num " + (this.state.secondSlots == 0 ? "empty-slot " : "") + this.state.slotFlash2}> {this.state.secondSlots} </span> </p>
           <p className="spell-slots"> 3rd slots: <span className={"slot-num " + (this.state.thirdSlots == 0 ? "empty-slot " : "") + this.state.slotFlash3}> {this.state.thirdSlots} </span> </p>
           <p className="spell-slots"> 4th slots: <span className={"slot-num " + (this.state.fourthSlots == 0 ? "empty-slot " : "") + this.state.slotFlash4}> {this.state.fourthSlots} </span> </p>
           <p className="spell-slots"> 5th slots: <span className={"slot-num " + (this.state.fifthSlots == 0 ? "empty-slot " : "") + this.state.slotFlash5}> {this.state.fifthSlots} </span> </p>
-        </div>
-        <div className="slot-row row2">
           <p className="spell-slots"> 6th slots: <span className={"slot-num " + (this.state.sixthSlots == 0 ? "empty-slot " : "") + this.state.slotFlash6}> {this.state.sixthSlots} </span> </p>
           <p className="spell-slots"> 7th slots: <span className={"slot-num " + (this.state.seventhSlots == 0 ? "empty-slot " : "") + this.state.slotFlash7}> {this.state.seventhSlots} </span> </p>
           <p className="spell-slots"> 8th slots: <span className={"slot-num " + (this.state.eigthSlots == 0 ? "empty-slot " : "") + this.state.slotFlash8}> {this.state.eigthSlots} </span> </p>

@@ -194,9 +194,9 @@ class SpellList extends Component {
     return (
       <div className="list-container">
         <div className="sort-bar noselect">
-          <h1 className="sort-name" onClick={() => this.nameSortFlag()}> Name {(this.state.nameSortFlag == 1 ? "\uD83E\uDC53" : (this.state.nameSortFlag == 2 ? "\uD83E\uDC51" : "-"))}</h1>
-          <h1 className="sort-level" onClick={() => this.levelSortFlag()}> Level {(this.state.levelSortFlag == 1 ? "\uD83E\uDC53" : (this.state.levelSortFlag == 2 ? "\uD83E\uDC51" : "-"))}</h1>
-          <h1 className="sort-school" onClick={() => this.schoolSortFlag()}> School {(this.state.schoolSortFlag == 1 ? "\uD83E\uDC53" : (this.state.schoolSortFlag == 2 ? "\uD83E\uDC51" : "-"))}</h1>
+          <h1 className="sort-text sort-name" onClick={() => this.nameSortFlag()}> Name {(this.state.nameSortFlag == 1 ? "\uD83E\uDC53" : (this.state.nameSortFlag == 2 ? "\uD83E\uDC51" : "-"))}</h1>
+          <h1 className="sort-text sort-level" onClick={() => this.levelSortFlag()}> Level {(this.state.levelSortFlag == 1 ? "\uD83E\uDC53" : (this.state.levelSortFlag == 2 ? "\uD83E\uDC51" : "-"))}</h1>
+          <h1 className="sort-text sort-school" onClick={() => this.schoolSortFlag()}> School {(this.state.schoolSortFlag == 1 ? "\uD83E\uDC53" : (this.state.schoolSortFlag == 2 ? "\uD83E\uDC51" : "-"))}</h1>
         </div>
         <div className="spell-list">
           {this.state.isLoading == true ? <img src={LoadingIcon} className="loading-icon"/> : finalSpellComponent}
