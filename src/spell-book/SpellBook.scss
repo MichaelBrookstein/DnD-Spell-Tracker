@@ -1,16 +1,16 @@
 @import "../spell-list/SpellList";
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap');
 
-@mixin base-styles($slot-width: 20%, $form-height: 25%, $slot-height: 10px, $slot-container-top: 12%) {
-  .spell-book-container {
-    position: fixed;
-    right: 0;
-    width: 50%;
-    height: 100%;
+@mixin base-styles($slot-width: 20%) {
+
+  .book-form-container {
+    margin: 0 auto;
+    padding: 25px 0 38px;
   }
 
   .book-list-container {
-    height: 70%;
+    height: 100%;
+    overflow-y: auto;
     width: 100%;
     overflow-y: auto;
     -webkit-box-shadow: inset 18px 0px 15px -5px;
@@ -52,7 +52,8 @@
   }
 
   .book-form {
-    height: $form-height;
+    display: flex;
+    flex-wrap: wrap;
     font-family: 'Grenze Gotisch', cursive;
     position: relative;
     background: url("../img/parchment.jpg");
@@ -64,24 +65,23 @@
     text-align: center;
     z-index: 10;
     .class-book {
-      position: absolute;
       font-size: 18px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      margin-top: -3%;
-      top: 1%;
+      line-height: 24px;
+      h1 {
+        margin: 0;
+      }
     }
     .slot-container {
-      position: absolute;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
       width: 100%;
-      top: $slot-container-top;
+      p {
+
+      }
     }
     .spell-slots {
-      height: $slot-height;
+      height: 5px;
       width: $slot-width;
       white-space: nowrap;
     }
@@ -105,87 +105,97 @@
     }
   }
 
-  .spell-book-list::after {
-    background: url("../img/parchment.jpg");
-    content: "";
-    opacity: 0.6;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: -5;
+  .form-buttons {
+    display: flex;
+    padding-top: 50px;
   }
-}
 
-@media (max-width: 768px) {
-
-}
-
-@media (max-width: 1024px) and (min-width: 768px) {
-  @include base-styles(33%, 35%);
-  .rest-btn {
-    font-family: 'Grenze Gotisch', cursive;
-    position: absolute;
-    float: right;
-    bottom: 14%;
-    right: 5%;
-    height: 36px;
-    width: 150px;
-    font-size: 20px;
-    line-height: 18px;
+  .rest-btn-container {
+    width: 50%;
+    .rest-btn {
+      font-family: 'Grenze Gotisch', cursive;
+      font-size: 20px;
+      line-height: 30px;
+      padding: 0 20px;
+    }
   }
   .keep-spells {
-    position: absolute;
-    right: 5%;
-    bottom: 2%;
+    display: none;
     font-size: 18px;
+    height: 0px;
+  }
+
+  .char-level-container {
+    width: 50%;
+    .char-level {
+      input {
+        margin-left: 10px;
+        width: 36px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .spell-book-list {
+    flex: 1 1 auto;
+    height: calc(100% - 86px);
+    overflow: auto;
+    background: url("../img/light_parchment.png");
+    -webkit-box-shadow: inset 18px 0px 15px -8px;
+    -moz-box-shadow: inset 18px 0px 15px -8px;
+    box-shadow: inset 18px 0px 15px -8px;
+  }
+
+  // .spell-book-list::after {
+  //   background: url("../img/parchment.jpg");
+  //   content: "";
+  //   opacity: 0.6;
+  //   position: absolute;
+  //   top: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   left: 0;
+  //   z-index: -5;
+  // }
+}
+
+@media (max-width: 768px), (max-height: 500px) {
+  @include base-styles(33%);
+  .spell-book-container {
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    height: 100%;
     display: none;
   }
-  .char-level {
-    position: absolute;
-    float: right;
-    bottom: 15%;
-    left: 5%;
-    input {
-      margin-left: 10px;
-      width: 36px;
-      font-size: 18px;
-    }
+  .show-book {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) and (min-height: 500px) {
+  @include base-styles(33%);
+  .spell-book-container {
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    right: 0;
+    width: 50%;
+    height: 100%;
   }
 }
 
 // @media only screen and (max-width: 1920px) and (min-width: 1024px) {
-@media (min-width: 1024px) {
+@media (min-width: 1025px) and (min-height: 500px) {
  @include base-styles;
- .rest-btn {
-   font-family: 'Grenze Gotisch', cursive;
-   position: absolute;
-   float: right;
-   bottom: 14%;
-   right: 18%;
-   height: 36px;
-   width: 150px;
-   font-size: 20px;
-   line-height: 18px;
- }
- .keep-spells {
-   position: absolute;
-   right: 18%;
-   bottom: 2%;
-   font-size: 18px;
-   display: none;
- }
- .char-level {
-   position: absolute;
-   float: right;
-   bottom: 15%;
-   left: 14%;
-   input {
-     margin-left: 10px;
-     width: 36px;
-     font-size: 18px;
-   }
+ .spell-book-container {
+   display: flex;
+   flex-flow: column;
+   position: fixed;
+   right: 0;
+   width: 50%;
+   height: 100%;
  }
 }
 

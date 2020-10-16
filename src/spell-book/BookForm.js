@@ -25,8 +25,9 @@ class BookForm extends Component {
           handleRest={this.props.handleRest}
           restFlag={this.props.restFlag}
           unprepareSpells={this.props.unprepareSpells}
+          handleCharLevel={this.props.handleCharLevel}
+          charLevel={this.props.charLevel}
         />
-        <BookFormComponent handleCharLevel={this.props.handleCharLevel} charLevel={this.props.charLevel} />
       </div>
     )
   }

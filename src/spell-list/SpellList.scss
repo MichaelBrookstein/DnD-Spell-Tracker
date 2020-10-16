@@ -1,16 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-@mixin base-styles($list-height: 25%) {
-  .spell-list-container {
-    position: fixed;
-    height: 100%;
-    width: 50%;
+@mixin base-styles {
+
+  .book-form-container {
+    padding: 20px 0;
   }
 
   .list-form {
     font-family: 'Grenze Gotisch', cursive;
-    height: $list-height;
     position: relative;
     background: url("../img/parchment.jpg");
     -webkit-box-shadow: inset -18px 0px 15px -8px, 0px 4px 7px;
@@ -26,13 +24,12 @@
       margin-left: 10px;
     }
     .list-form-flex {
-      position: absolute;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
       width: 100%;
+      padding: 5% 0;
       text-align: center;
-      top: 10%;
     }
     .filter-component {
       width: 37%;
@@ -40,21 +37,19 @@
     }
   }
 
+
   .list-container {
-    direction: rtl;
-    height: 70%;
+    height: 100%;
+    overflow-y: auto;
     -webkit-box-shadow: inset -18px 0px 15px -8px;
     -moz-box-shadow: inset -18px 0px 15px -8px;
     box-shadow: inset -18px 0px 15px -8px;
-    overflow-y: auto;
     .loading-icon {
-      height: 12%;
-      width: 12%;
-      top: 50%;
-      left: 0;
-      right: 0;
-      position: absolute;
-      margin: 0 auto;
+      height: 18%;
+      width: 18%;
+      position: relative;
+      top: 35%;
+      right: 40%;
       animation: loading 9s ease-in-out infinite;
     }
     .sort-bar {
@@ -91,6 +86,10 @@
     }
   }
 
+  .final-height {
+    height: auto;
+  }
+
   @keyframes loading {
     0% {filter: invert(21%) sepia(70%) saturate(1830%) hue-rotate(334deg) brightness(114%) contrast(99%); transform: rotate(0deg);}
     7.7% {filter: invert(42%) sepia(98%) saturate(1697%) hue-rotate(340deg) brightness(99%) contrast(83%); transform: rotate(27.7deg);}
@@ -108,17 +107,28 @@
     100% {filter: invert(21%) sepia(70%) saturate(1830%) hue-rotate(334deg) brightness(114%) contrast(99%); transform: rotate(360deg);}
   }
 
-  .spell-list::after {
-    background: url("../img/parchment.jpg");
-    content: "";
-    opacity: 0.6;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: -5;
+  .spell-list {
+    direction: rtl;
+    flex: 1 1 auto;
+    height: calc(100% - 86px);
+    overflow: auto;
+    background: url("../img/light_parchment.png");
+    -webkit-box-shadow: inset -18px 0px 15px -8px;
+    -moz-box-shadow: inset -18px 0px 15px -8px;
+    box-shadow: inset -18px 0px 15px -8px;
   }
+
+  // .spell-list::after {
+  //   height: 130%;
+  //   background: url("../img/parchment.jpg");
+  //   content: "";
+  //   opacity: 0.6;
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   left: 0;
+  //   z-index: -5;
+  // }
 
   .learn-spell-btn {
     cursor: pointer;
@@ -137,17 +147,41 @@
   }
 }
 
-@media (max-width: 768px) {
-
+@media (max-width: 768px), (max-height: 500px) {
+  @include base-styles;
+  .spell-list-container {
+    overflow-y: auto;
+    position: fixed;
+    height: 100%;
+    display: none;
+  }
+  .show-list {
+    display: block;
+    width: 100%;
+  }
 }
 
-@media (max-width: 1024px) and (min-width: 768px) {
-  @include base-styles(35%);
+@media (max-width: 1024px) and (min-width: 769px) and (min-height: 500px) {
+  @include base-styles;
+  .spell-list-container {
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    height: 100%;
+    width: 50%;
+  }
 }
 
 // @media only screen and (max-width: 1920px) and (min-width: 1024px) {
-@media (min-width: 1024px) {
+@media (min-width: 1025px) and (min-height: 500px) {
   @include base-styles;
+  .spell-list-container {
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    height: 100%;
+    width: 50%;
+  }
 }
 
 // @media (min-width: 1920px) {

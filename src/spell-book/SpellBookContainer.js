@@ -54,7 +54,7 @@ class SpellBookContainer extends Component {
 
   render() {
     return (
-      <div className="spell-book-container">
+      <div className={"spell-book-container " + (this.props.switchShow == "show-book" ? "show-book" : "")}>
         <BookForm
           handleRest={this.handleRest}
           restFlag = {this.state.isResting}

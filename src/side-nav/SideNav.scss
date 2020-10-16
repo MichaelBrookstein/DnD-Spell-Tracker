@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap');
 
-$side-small: 87px;
 $side-big: 180px;
 $all-class-bg: #C73032;
 $barbarian-bg: #E7623E;
@@ -16,23 +15,22 @@ $sorcerer-bg: #992E2E;
 $warlock-bg: #7B469B;
 $wizard-bg: #2A50A1;
 
-@mixin base-styles($ribbon-opacity: 100%) {
+@mixin base-styles($tab-padding: 18px, $label-padding: 20px) {
   .sidenav {
     height: auto;
     top: -101%;
     left: 0;
     position: absolute;
-    width: $side-small;
+    width: 87px;
     overflow: hidden;
     z-index: 10;
     transition: top 0.85s ease-in-out, width 0.35s ease-in-out;
-
   }
 
   .tabContainer {
     cursor: pointer;
     display: flex;
-    padding: 0px 18px;
+    padding: 0px $tab-padding;
     height: 7.7vh;
     font-family: 'Grenze Gotisch', cursive;
     outline: 1px solid;
@@ -44,7 +42,7 @@ $wizard-bg: #2A50A1;
     }
     .classLabel {
       align-self: center;
-      padding-left: 20px;
+      padding-left: $label-padding;
       font-size: 19px;
       pointer-events: none;
       position: relative;
@@ -53,10 +51,6 @@ $wizard-bg: #2A50A1;
 
   .showNav {
     top: 0;
-  }
-
-  .showNav:hover {
-    width: $side-big;
   }
 
   .all-classes {
@@ -97,16 +91,6 @@ $wizard-bg: #2A50A1;
   }
   .wizard {
     background: $wizard-bg;
-  }
-  .ribbon {
-    width: $side-small;
-    height: 115px;
-    outline: none;
-    cursor: default;
-    opacity: $ribbon-opacity;
-    .icon {
-      padding-bottom: 25px;
-    }
   }
   .all-classes-ribbon {
     background: url("../img/allclass_ribbon.png");
@@ -174,18 +158,6 @@ $wizard-bg: #2A50A1;
     background-repeat: no-repeat;
   }
 
-
-
-  .image-map {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    width: 85px;
-    height: 115px;
-    z-index: 11;
-  }
-
   .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -196,17 +168,96 @@ $wizard-bg: #2A50A1;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-height: 500px) {
+  @include base-styles(0, 5px);
+  .ribbon {
+    width: 53px;
+    height: 70px;
+    outline: none;
+    cursor: default;
+    opacity: 70%;
+  }
+  .ribbon-icon {
+    min-width: 30px;
+    min-height: 30px;
+    pointer-events: none;
+    padding: 0 11px 15px;
+  }
+  .image-map {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    width: 53px;
+    height: 70px;
+    z-index: 11;
+  }
+  .showNav:hover {
 
+  }
+  .classLabel {
+    margin: 0 auto;
+  }
+  .icon {
+    display: none;
+  }
 }
 
-@media (max-width: 1024px) and (min-width: 768px) {
-  @include base-styles(50%);
+@media (max-width: 1024px) and (min-width: 769px) and (min-height: 500px) {
+  @include base-styles;
+  .ribbon {
+    width: 87px;
+    height: 115px;
+    outline: none;
+    cursor: default;
+  }
+  .ribbon-icon {
+    min-width: 50px;
+    min-height: 50px;
+    pointer-events: none;
+    padding-bottom: 25px;
+  }
+  .image-map {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    width: 85px;
+    height: 115px;
+    z-index: 11;
+  }
+  .showNav:hover {
+    width: $side-big;
+  }
 }
 
 // @media only screen and (max-width: 1920px) and (min-width: 1024px) {
-@media (min-width: 1024px) {
+@media (min-width: 1025px) and (min-height: 500px) {
  @include base-styles;
+ .ribbon {
+   width: 87px;
+   height: 115px;
+   outline: none;
+   cursor: default;
+ }
+ .ribbon-icon {
+   min-width: 50px;
+   min-height: 50px;
+   pointer-events: none;
+   padding-bottom: 25px;
+ }
+ .image-map {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   opacity: 0;
+   width: 85px;
+   height: 115px;
+   z-index: 11;
+ }
+ .showNav:hover {
+   width: $side-big;
+ }
 }
 
 // @media (min-width: 1920px) {

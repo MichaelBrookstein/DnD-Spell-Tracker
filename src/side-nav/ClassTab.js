@@ -43,7 +43,6 @@ function ClassTab(props) {
   else {
     let activeIcon = props.selectedClass.split(" ").join("") + "Icon"
     classRibbon = props.selectedClass.replace(/\s+/g, '-').toLowerCase() + "-ribbon "
-    console.log(classRibbon)
     ClassIcon = ClassIconComponents[activeIcon]
     image_map = (
       <img className="image-map"
@@ -61,7 +60,7 @@ function ClassTab(props) {
         <area target="" alt="" title="" onClick={props.handleNavClick} coords="0,0,85,0,85,115,43,85,2,115" shape="poly" id="Ribbon"/>
       </map>
       {image_map}
-      <ClassIcon className="icon"/>
+      <ClassIcon className={props.iconName !== "RibbonIcon" ? "icon" : "ribbon-icon"}/>
       <div className="classLabel noselect"> {classLabel} </div>
     </div>
   )

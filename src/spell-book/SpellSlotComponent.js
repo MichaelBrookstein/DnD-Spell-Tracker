@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import BookFormComponent from "./BookFormComponent"
 import "./SpellBook.scss";
 
 class SpellSlotComponent extends Component {
@@ -1066,7 +1067,7 @@ class SpellSlotComponent extends Component {
 
   render() {
     return (
-      <div>
+      <div className="book-form-container">
         <div className="class-book">
           <h1> {this.props.selectedClass == "All Classes" ? "" : this.props.selectedClass} Spellbook </h1>
         </div>
@@ -1081,10 +1082,17 @@ class SpellSlotComponent extends Component {
           <p className="spell-slots"> 8th slots: <span className={"slot-num " + (this.state.eigthSlots == 0 ? "empty-slot " : "") + this.state.slotFlash8}> {this.state.eigthSlots} </span> </p>
           <p className="spell-slots"> 9th slots: <span className={"slot-num " + (this.state.ninthSlots == 0 ? "empty-slot " : "") + this.state.slotFlash9}> {this.state.ninthSlots} </span> </p>
         </div>
-        <button className="rest-btn" onClick={() => this.props.handleRest(true)}> {this.props.selectedClass == "Warlock" ? "Long/Short Rest" : "Long Rest"} </button>
-        <div className={"keep-spells " + this.state.prepareShown}>
-          <input type="checkbox" id="keepSpells" onChange={this.handleKeepSpells} checked={this.state.keepSpells}/>
-          <label htmlFor="keepSpells">Keep Prepared Spells?</label>
+        <div className="form-buttons">
+          <div className="char-level-container">
+            <BookFormComponent handleCharLevel={this.props.handleCharLevel} charLevel={this.props.charLevel} />
+          </div>
+          <div className="rest-btn-container">
+            <button className="rest-btn" onClick={() => this.props.handleRest(true)}> {this.props.selectedClass == "Warlock" ? "Long/Short Rest" : "Long Rest"} </button>
+            <div className={"keep-spells " + this.state.prepareShown}>
+              <input type="checkbox" id="keepSpells" onChange={this.handleKeepSpells} checked={this.state.keepSpells}/>
+              <label htmlFor="keepSpells">Keep Prepared Spells?</label>
+            </div>
+          </div>
         </div>
       </div>
     )

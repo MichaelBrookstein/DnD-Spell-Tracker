@@ -98,16 +98,16 @@
   }
 }
 
-@media (max-width: 768px) {
-
+@media (max-width: 768px), (max-height: 500px) {
+  @include base-styles(2.2vw);
 }
 
-@media (max-width: 1024px) and (min-width: 768px) {
+@media (max-width: 1024px) and (min-width: 769px) and (min-height: 500px) {
   @include base-styles(1.7vw);
 }
 
 // @media only screen and (max-width: 1920px) and (min-width: 1024px) {
-@media (min-width: 1024px) {
+@media (min-width: 1025px) and (min-height: 500px) {
   @include base-styles;
 }
 

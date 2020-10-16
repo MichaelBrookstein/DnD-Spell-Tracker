@@ -24,7 +24,7 @@ class SpellListContainer extends Component {
 
   render() {
     return (
-      <div className="spell-list-container">
+      <div className={"spell-list-container " + (this.props.switchShow == "show-list" ? "show-list" : "")}>
         <div className="list-form">
           <ListFormComponent
             handleChange={this.handleChange}

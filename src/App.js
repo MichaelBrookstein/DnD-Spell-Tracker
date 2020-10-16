@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.scss';
+import SwitchBtn from "./SwitchBtn"
 import SideNavBar from "./side-nav/SideNav"
 import SpellListContainer from "./spell-list/SpellListContainer"
 import SpellBookContainer from "./spell-book/SpellBookContainer"
@@ -13,13 +14,24 @@ class App extends Component {
       class: "All Classes",
       showNav: "",
       knownIDArray: [],
-      spellBookArray: []
+      spellBookArray: [],
+      switchShow: "show-list"
     }
     this.handleNavClick = this.handleNavClick.bind(this)
     this.handleLearnSpell = this.handleLearnSpell.bind(this)
     this.handleUnlearnSpell = this.handleUnlearnSpell.bind(this)
     this.handleSpellBook = this.handleSpellBook.bind(this)
     this.unprepareSpells = this.unprepareSpells.bind(this)
+    this.handleSwitch = this.handleSwitch.bind(this)
+  }
+
+  handleSwitch() {
+    if (this.state.switchShow == "show-list") {
+      this.setState({ switchShow: "show-book" })
+    }
+    else {
+      this.setState({ switchShow: "show-list" })
+    }
   }
 
   handleNavClick(event) {
@@ -70,9 +82,10 @@ class App extends Component {
     return (
       <div>
         <div className="content">
+          <SwitchBtn switchShow={this.state.switchShow} handleSwitch={this.handleSwitch}/>
           <SideNavBar selectedClass={this.state.class} showNav={this.state.showNav} handleNavClick={this.handleNavClick}/>
-          <SpellListContainer selectedClass={this.state.class} handleLearnSpell={this.handleLearnSpell} knownIDArray={this.state.knownIDArray} handleSpellBook={this.handleSpellBook}/>
-          <SpellBookContainer selectedClass={this.state.class} handleUnlearnSpell={this.handleUnlearnSpell} unprepareSpells={this.unprepareSpells} knownSpells={this.state.spellBookArray} />
+          <SpellListContainer switchShow={this.state.switchShow} selectedClass={this.state.class} handleLearnSpell={this.handleLearnSpell} knownIDArray={this.state.knownIDArray} handleSpellBook={this.handleSpellBook}/>
+          <SpellBookContainer switchShow={this.state.switchShow} selectedClass={this.state.class} handleUnlearnSpell={this.handleUnlearnSpell} unprepareSpells={this.unprepareSpells} knownSpells={this.state.spellBookArray} />
           <FooterComponent />
         </div>
         <div className="mobile-placeholder">
