@@ -3,10 +3,7 @@
 html,
 body {
   margin: 0;
-  overflow-y: hidden;
   overflow-x: hidden;
-  height: 100%;
-  width: 100%;
 }
 
 @mixin base-styles($footer-height: 52px, $foot-lh: 4px) {
@@ -61,7 +58,7 @@ body {
   @include base-styles(80px, 12px);
   .switch-btn-fwd {
     background: url("img/arrow.png");
-    background-size: contain;
+    background-size: cover;
     position: absolute;
     top: 0;
     right: 0;
@@ -72,7 +69,7 @@ body {
   }
   .switch-btn-rev {
     background: url("img/reverse_arrow.png");
-    background-size: contain;
+    background-size: cover;
     position: absolute;
     top: 0;
     right: 0;
