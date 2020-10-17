@@ -3,7 +3,7 @@
 html,
 body {
   margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 @mixin base-styles($footer-height: 52px, $foot-lh: 4px) {
