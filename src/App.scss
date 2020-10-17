@@ -57,9 +57,9 @@ body {
 @media (max-width: 768px), (max-height: 500px) {
   @include base-styles(80px, 12px);
   .switch-btn-fwd {
-    background: url("img/arrow.png");
-    background-size: contain;
-    background-attachment: scroll;
+    background: green;
+    // background: url("img/arrow.png");
+    // background-size: contain;
     position: fixed;
     top: 0;
     right: 0;
@@ -69,9 +69,9 @@ body {
     opacity: 70%;
   }
   .switch-btn-rev {
-    background: url("img/reverse_arrow.png");
-    background-size: contain;
-    background-attachment: scroll;
+    background: red;
+    // background: url("img/reverse_arrow.png");
+    // background-size: contain;
     position: fixed;
     top: 0;
     right: 0;
