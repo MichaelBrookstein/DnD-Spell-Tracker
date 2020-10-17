@@ -59,6 +59,7 @@ body {
   .switch-btn-fwd {
     background: url("img/arrow.png");
     background-size: contain;
+    background-attachment: scroll;
     position: fixed;
     top: 0;
     right: 0;
@@ -70,6 +71,7 @@ body {
   .switch-btn-rev {
     background: url("img/reverse_arrow.png");
     background-size: contain;
+    background-attachment: scroll;
     position: fixed;
     top: 0;
     right: 0;
