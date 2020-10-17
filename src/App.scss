@@ -4,6 +4,7 @@ html,
 body {
   margin: 0;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 @mixin base-styles($footer-height: 52px, $foot-lh: 4px) {
