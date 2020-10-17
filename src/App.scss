@@ -5,6 +5,8 @@ body {
   margin: 0;
   overflow-y: hidden;
   overflow-x: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 @mixin base-styles($footer-height: 52px, $foot-lh: 4px) {
