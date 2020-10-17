@@ -67,9 +67,8 @@ body {
     z-index: 999;
   }
   .switch-btn-rev {
-    background: red;
-    // background: url("img/reverse_arrow.png");
-    // background-size: contain;
+    background: url("img/reverse_arrow.png");
+    background-size: contain;
     position: absolute;
     top: 0;
     right: 0;
