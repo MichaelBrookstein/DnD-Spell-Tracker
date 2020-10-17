@@ -7,6 +7,10 @@ body {
 }
 
 @mixin base-styles($footer-height: 52px, $foot-lh: 4px) {
+  .content {
+    height: 100%;
+    width: 100%;
+  }
   .footer {
     position: fixed;
     bottom: 0px;
