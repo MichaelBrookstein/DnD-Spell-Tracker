@@ -58,7 +58,6 @@ body {
   @include base-styles(80px, 12px);
   .switch-btn-fwd {
     background: url("img/arrow.png");
-    background-size: 100%;
     position: absolute;
     top: 0;
     right: 0;
@@ -69,7 +68,6 @@ body {
   }
   .switch-btn-rev {
     background: url("img/reverse_arrow.png");
-    background-size: 100%;
     position: absolute;
     top: 0;
     right: 0;
