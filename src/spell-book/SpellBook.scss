@@ -163,7 +163,7 @@
   @include base-styles(33%);
   .spell-book-container {
     overflow: auto;
-    position: fixed;
+    position: relative;
     right: 0;
     height: 100%;
     display: none;
@@ -179,10 +179,11 @@
   .spell-book-container {
     display: flex;
     flex-flow: column;
-    position: fixed;
+    position: relative;
     right: 0;
     width: 50%;
     height: 100%;
+    float: right;
   }
 }
 
@@ -192,10 +193,11 @@
  .spell-book-container {
    display: flex;
    flex-flow: column;
-   position: fixed;
+   position: relative;
    right: 0;
    width: 50%;
    height: 100%;
+   float: right;
  }
 }
 

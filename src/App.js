@@ -4,7 +4,6 @@ import SwitchBtn from "./SwitchBtn"
 import SideNavBar from "./side-nav/SideNav"
 import SpellListContainer from "./spell-list/SpellListContainer"
 import SpellBookContainer from "./spell-book/SpellBookContainer"
-import FooterComponent from "./FooterComponent"
 
 class App extends Component {
 
@@ -86,10 +85,11 @@ class App extends Component {
           <SideNavBar selectedClass={this.state.class} showNav={this.state.showNav} handleNavClick={this.handleNavClick}/>
           <SpellListContainer switchShow={this.state.switchShow} selectedClass={this.state.class} handleLearnSpell={this.handleLearnSpell} knownIDArray={this.state.knownIDArray} handleSpellBook={this.handleSpellBook}/>
           <SpellBookContainer switchShow={this.state.switchShow} selectedClass={this.state.class} handleUnlearnSpell={this.handleUnlearnSpell} unprepareSpells={this.unprepareSpells} knownSpells={this.state.spellBookArray} />
-          <FooterComponent />
-        </div>
-        <div className="mobile-placeholder">
-          <h1> Smaller Resolutions Still Under Development </h1>
+          <footer className="footer">
+            <p>Wizards of the Coast, Dungeons & Dragons, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © 2015 Wizards. All Rights Reserved.</p>
+            <p>Dungeon and Dragons® spell information (names, descriptions, levels, etc.) taken from <a href="https://www.dnd5eapi.co/">DND 5e API</a></p>
+            <p>Parchment texture by ChrisFiedler from pixabay.com</p>
+          </footer>
         </div>
       </div>
     )

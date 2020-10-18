@@ -151,7 +151,7 @@
   @include base-styles;
   .spell-list-container {
     overflow-y: auto;
-    position: fixed;
+    position: relative;
     height: 100%;
     display: none;
   }
@@ -166,9 +166,10 @@
   .spell-list-container {
     display: flex;
     flex-flow: column;
-    position: fixed;
+    position: relative;
     height: 100%;
     width: 50%;
+    float: left;
   }
 }
 
@@ -178,9 +179,10 @@
   .spell-list-container {
     display: flex;
     flex-flow: column;
-    position: fixed;
+    position: relative;
     height: 100%;
     width: 50%;
+    float: left;
   }
 }
 

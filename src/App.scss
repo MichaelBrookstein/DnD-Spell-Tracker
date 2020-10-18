@@ -3,56 +3,32 @@
 html,
 body {
   margin: 0;
-  overflow: hidden;
 }
 
 @mixin base-styles($footer-height: 52px, $foot-lh: 4px) {
   .content {
-    height: 100%;
-    width: 100%;
+    position: relative;
+    height: 100vh;
   }
   .footer {
-    position: fixed;
-    bottom: 0px;
+    overflow: hidden;
+    position: absolute;
     background: #373737;
+    bottom: 0px;
     height: $footer-height;
     width: 100%;
     text-align: center;
     font-size: 10px;
     color: lightgray;
     font-family: 'Roboto', sans-serif;
+    z-index: 99;
     p {
       line-height: $foot-lh;
       margin: 10px;
     }
   }
-
-  .mobile-placeholder {
-    display: none;
-  }
 }
 
-@mixin placeholder {
-  .content {
-    display: none;
-  }
-  .mobile-placeholder {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #373737;
-    color: lightgray;
-    h1 {
-      width: 50%;
-      top: 40%;
-      left: 0;
-      right: 0;
-      position: absolute;
-      margin: 0 auto;
-      font-family: 'Roboto', sans-serif;
-    }
-  }
-}
 
 @media (max-width: 768px), (max-height: 500px) {
   @include base-styles(80px, 12px);

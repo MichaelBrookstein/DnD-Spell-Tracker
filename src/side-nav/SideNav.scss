@@ -23,7 +23,7 @@ $wizard-bg: #2A50A1;
     position: fixed;
     width: 87px;
     overflow: hidden;
-    z-index: 10;
+    z-index: 999;
     transition: top 0.85s ease-in-out, width 0.35s ease-in-out;
   }
 
