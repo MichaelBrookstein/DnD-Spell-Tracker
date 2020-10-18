@@ -190,6 +190,7 @@ class SpellList extends Component {
       this.props.handleSpellBook(knownSpellComponent)
 
     }
+    //<div className={"spell-list " + (this.state.isLoading == true ? "" : "final-height")}>
 
     return (
       <div className="list-container">
@@ -198,7 +199,7 @@ class SpellList extends Component {
           <h1 className="sort-text sort-level" onClick={() => this.levelSortFlag()}> Level {(this.state.levelSortFlag == 1 ? "\uD83E\uDC53" : (this.state.levelSortFlag == 2 ? "\uD83E\uDC51" : "-"))}</h1>
           <h1 className="sort-text sort-school" onClick={() => this.schoolSortFlag()}> School {(this.state.schoolSortFlag == 1 ? "\uD83E\uDC53" : (this.state.schoolSortFlag == 2 ? "\uD83E\uDC51" : "-"))}</h1>
         </div>
-        <div className={"spell-list " + (this.state.isLoading == true ? "" : "final-height")}>
+        <div className="spell-list">
           {this.state.isLoading == true ? <img src={LoadingIcon} className="loading-icon"/> : finalSpellComponent}
         </div>
       </div>

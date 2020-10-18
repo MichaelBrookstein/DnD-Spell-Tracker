@@ -5,17 +5,19 @@ body {
   margin: 0;
 }
 
-@mixin base-styles($footer-height: 52px, $foot-lh: 4px) {
+@mixin base-styles($content-height: 100vh) {
   .content {
     position: relative;
-    height: 100vh;
+    //IMPORTANT
+    min-height: 100vh;
+    height: $content-height;
   }
   .footer {
+    position: relative;
     overflow: hidden;
-    position: absolute;
     background: #373737;
     bottom: 0px;
-    height: $footer-height;
+    height: 5%;
     width: 100%;
     text-align: center;
     font-size: 10px;
@@ -23,7 +25,7 @@ body {
     font-family: 'Roboto', sans-serif;
     z-index: 99;
     p {
-      line-height: $foot-lh;
+      line-height: 4px;
       margin: 10px;
     }
   }
@@ -31,7 +33,7 @@ body {
 
 
 @media (max-width: 768px), (max-height: 500px) {
-  @include base-styles(80px, 12px);
+  @include base-styles(auto);
   .switch-btn-fwd {
     background: url("img/arrow.png");
     background-size: contain;

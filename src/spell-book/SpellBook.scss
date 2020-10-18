@@ -9,13 +9,12 @@
   }
 
   .book-list-container {
-    height: 100%;
+    flex: 1 1 0;
     overflow-y: auto;
-    width: 100%;
-    overflow-y: auto;
-    -webkit-box-shadow: inset 18px 0px 15px -5px;
-    -moz-box-shadow: inset 18px 0px 15px -5px;
-    box-shadow: inset 18px 0px 15px -5px;
+    background: url("../img/light_parchment.png");
+    -webkit-box-shadow: inset 18px 0px 15px -8px;
+    -moz-box-shadow: inset 18px 0px 15px -8px;
+    box-shadow: inset 18px 0px 15px -8px;
   }
 
   .sort-bar {
@@ -137,13 +136,7 @@
   }
 
   .spell-book-list {
-    flex: 1 1 auto;
-    height: calc(100% - 86px);
-    overflow: auto;
-    background: url("../img/light_parchment.png");
-    -webkit-box-shadow: inset 18px 0px 15px -8px;
-    -moz-box-shadow: inset 18px 0px 15px -8px;
-    box-shadow: inset 18px 0px 15px -8px;
+
   }
 
   // .spell-book-list::after {
@@ -165,7 +158,7 @@
     overflow: auto;
     position: relative;
     right: 0;
-    height: 100%;
+    height: 95%;
     display: none;
   }
   .show-book {
@@ -182,7 +175,7 @@
     position: relative;
     right: 0;
     width: 50%;
-    height: 100%;
+    height: 95%;
     float: right;
   }
 }
@@ -196,7 +189,7 @@
    position: relative;
    right: 0;
    width: 50%;
-   height: 100%;
+   height: 95%;
    float: right;
  }
 }
