@@ -135,10 +135,6 @@
     }
   }
 
-  .spell-book-list {
-
-  }
-
   // .spell-book-list::after {
   //   background: url("../img/parchment.jpg");
   //   content: "";
@@ -164,6 +160,9 @@
   .show-book {
     display: block;
     width: 100%;
+  }
+  .spell-book-list {
+    min-height: 100vh;
   }
 }
 

@@ -5,12 +5,11 @@ body {
   margin: 0;
 }
 
-@mixin base-styles($content-height: 100vh) {
+@mixin base-styles {
   .content {
     position: relative;
     //IMPORTANT
-    min-height: 100vh;
-    height: $content-height;
+    height: 100vh;
   }
   .footer {
     position: relative;
@@ -33,7 +32,7 @@ body {
 
 
 @media (max-width: 768px), (max-height: 500px) {
-  @include base-styles(auto);
+  @include base-styles;
   .switch-btn-fwd {
     background: url("img/arrow.png");
     background-size: contain;

@@ -109,10 +109,6 @@
     100% {filter: invert(21%) sepia(70%) saturate(1830%) hue-rotate(334deg) brightness(114%) contrast(99%); transform: rotate(360deg);}
   }
 
-  .spell-list {
-
-  }
-
   // .spell-list::after {
   //   height: 130%;
   //   background: url("../img/parchment.jpg");
@@ -140,6 +136,9 @@
     -ms-user-select: none;
     user-select: none;
   }
+  .spell-list-loading {
+    height: 90%;
+  }
 }
 
 @media (max-width: 768px), (max-height: 500px) {
@@ -153,6 +152,12 @@
   .show-list {
     display: block;
     width: 100%;
+  }
+  .spell-list-loading {
+    height: 90vh;
+  }
+  .spell-list {
+    min-height: 90%;
   }
 }
 
