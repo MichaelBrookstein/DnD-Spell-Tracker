@@ -127,7 +127,6 @@
     margin-top: 0px;
     padding-right: 20px;
   }
-
   .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -144,6 +143,8 @@
 @media (max-width: 768px), (max-height: 500px) {
   @include base-styles;
   .spell-list-container {
+    display: flex;
+    flex-flow: column;
     overflow-y: auto;
     position: relative;
     height: 95%;
@@ -153,11 +154,9 @@
     display: block;
     width: 100%;
   }
-  .spell-list-loading {
-    height: 90vh;
-  }
-  .spell-list {
-    min-height: 90%;
+  .spell-list-loading, .spell-list {
+    min-height: 90vh;
+    height: 100px;
   }
 }
 
