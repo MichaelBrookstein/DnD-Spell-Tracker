@@ -18,7 +18,7 @@ $wizard-bg: #2A50A1;
 @mixin base-styles($tab-padding: 18px, $label-padding: 20px) {
   .sidenav {
     height: auto;
-    top: -101%;
+    top: -100vh;
     left: 0;
     position: fixed;
     width: 87px;
